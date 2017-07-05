@@ -1,0 +1,80 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'D:\GitRepos\QDatenansichtTest2\GuiBuilder\QDatenansichtTest2\mainwindow.ui'
+#
+# Created by: PyQt5 UI code generator 5.6
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(433, 345)
+        self.centralWidget = QtWidgets.QWidget(MainWindow)
+        self.centralWidget.setObjectName("centralWidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.centralWidget)
+        self.verticalLayout.setContentsMargins(11, 11, 11, 11)
+        self.verticalLayout.setSpacing(6)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.label = QtWidgets.QLabel(self.centralWidget)
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.verticalLayout.addWidget(self.label)
+        self.tableView = QtWidgets.QTableView(self.centralWidget)
+        self.tableView.setObjectName("tableView")
+        self.verticalLayout.addWidget(self.tableView)
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setContentsMargins(11, 11, 11, 11)
+        self.horizontalLayout.setSpacing(6)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout.addItem(spacerItem)
+        self.pushButton_Reset = QtWidgets.QPushButton(self.centralWidget)
+        self.pushButton_Reset.setObjectName("pushButton_Reset")
+        self.horizontalLayout.addWidget(self.pushButton_Reset)
+        self.pushButton_Clear = QtWidgets.QPushButton(self.centralWidget)
+        self.pushButton_Clear.setObjectName("pushButton_Clear")
+        self.horizontalLayout.addWidget(self.pushButton_Clear)
+        self.pushButton_Load = QtWidgets.QPushButton(self.centralWidget)
+        self.pushButton_Load.setObjectName("pushButton_Load")
+        self.horizontalLayout.addWidget(self.pushButton_Load)
+        self.verticalLayout.addLayout(self.horizontalLayout)
+        MainWindow.setCentralWidget(self.centralWidget)
+        self.menuBar = QtWidgets.QMenuBar(MainWindow)
+        self.menuBar.setGeometry(QtCore.QRect(0, 0, 433, 21))
+        self.menuBar.setObjectName("menuBar")
+        MainWindow.setMenuBar(self.menuBar)
+        self.mainToolBar = QtWidgets.QToolBar(MainWindow)
+        self.mainToolBar.setObjectName("mainToolBar")
+        MainWindow.addToolBar(QtCore.Qt.TopToolBarArea, self.mainToolBar)
+        self.statusBar = QtWidgets.QStatusBar(MainWindow)
+        self.statusBar.setObjectName("statusBar")
+        MainWindow.setStatusBar(self.statusBar)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.label.setText(_translate("MainWindow", "Testansicht mit Table und Model"))
+        self.pushButton_Reset.setText(_translate("MainWindow", "Reset"))
+        self.pushButton_Clear.setText(_translate("MainWindow", "Clear"))
+        self.pushButton_Load.setText(_translate("MainWindow", "Load"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
+
