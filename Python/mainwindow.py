@@ -35,7 +35,7 @@ class Ui_MainWindow(object):
         self.label.setFont(font)
         self.label.setObjectName("label")
         self.verticalLayout.addWidget(self.label)
-#        self.tableView = QtWidgets.QTableView(self.centralWidget) ---> Replace Gui Builder Widget with user Widget
+        #        self.tableView = QtWidgets.QTableView(self.centralWidget) ---> Replace Gui Builder Widget with user Widget
         self.tableView = myTableView(self.centralWidget)
         self.tableView.setObjectName("tableView")
         self.verticalLayout.addWidget(self.tableView)
@@ -45,6 +45,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setObjectName("horizontalLayout")
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
+        self.pushButton_Print = QtWidgets.QPushButton(self.centralWidget)
+        self.pushButton_Print.setObjectName("pushButton_Print")
+        self.horizontalLayout.addWidget(self.pushButton_Print)
         self.pushButton_Reset = QtWidgets.QPushButton(self.centralWidget)
         self.pushButton_Reset.setObjectName("pushButton_Reset")
         self.horizontalLayout.addWidget(self.pushButton_Reset)
@@ -80,11 +83,11 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "Test with Custom Model"))
+        self.label.setText(_translate("MainWindow", "Testansicht mit Table und Model"))
+        self.pushButton_Print.setText(_translate("MainWindow", "Print"))
         self.pushButton_Reset.setText(_translate("MainWindow", "Reset"))
         self.pushButton_Clear.setText(_translate("MainWindow", "Clear"))
         self.pushButton_Load.setText(_translate("MainWindow", "Load"))
-
     #
     # extends initialisation
     #
@@ -102,6 +105,7 @@ class Ui_MainWindow(object):
         self.pushButton_Reset.clicked.connect(self.__reset)
         self.pushButton_Load.clicked.connect(self.__load)
         self.pushButton_Clear.clicked.connect(self.__clear)
+        self.pushButton_Print.clicked.connect(self.__print)
 
 
     #
@@ -124,3 +128,11 @@ class Ui_MainWindow(object):
     def __load(self):
         self.tableView.setModel(self.table_model)
 
+
+    #
+    # Print button pressed
+    #
+    def __print(self):
+        print("__print")
+        for fix_text, change_text, state, choice, debug in self.table_data.get_data():
+            print("{0} - {1} - {2} - {3} - {4}".format(fix_text, change_text, state, choice, debug))
